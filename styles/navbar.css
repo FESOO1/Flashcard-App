@@ -12,6 +12,7 @@ nav {
     border-radius: 0.3rem;
     background-color: rgba(30,30,31,0.5);
     backdrop-filter: blur(25px);
+    column-gap: 4px;
 }
 
 /* NAVBAR BUTTON */
@@ -28,10 +29,15 @@ nav {
     border-top: 1px solid rgba(255,255,255,0.06);
     border-bottom: 1px solid rgba(255,255,255,0.03);
     cursor: pointer;
+    transition: background-color 200ms;
 }
 
 .navbar-button-svg {
     width: 17px;
     height: 17px;
     color: white;
+}
+
+.navbar-button:hover {
+    background-color: rgb(45,45,45);
 }
