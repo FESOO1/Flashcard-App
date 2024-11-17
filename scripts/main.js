@@ -2,7 +2,7 @@ const flashcardThemselves = document.querySelector('.flashcard-themselves');
 const flashcardItself = document.querySelector('.flashcard-itself');
 const flashcardShadow = document.querySelector('.flashcard-shadow');
 const flashcardEmptyText = document.querySelector('.flashcard-app-header');
-const flashcardForm = document.querySelector('.flashcard-form');
+const flashcardParent = document.querySelector('.flashcard-parent');
 const flashcardFormSubmitBtn = document.querySelector('.flashcard-button');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
 const questionInput = document.getElementById('questionInput');
@@ -18,7 +18,7 @@ function addNewCardForm(e) {
     e.stopImmediatePropagation();
 
     isFormOpened = true;
-    flashcardForm.classList.add('flashcard-form-active');
+    flashcardParent.classList.add('flashcard-parent-active');
     flashcardEmptyText.classList.add('flashcard-app-header-deactive');
 };
 
@@ -46,7 +46,7 @@ function addNewCard(e) {
     questionInput.value = '';
     answerInput.value = '';
     isFormOpened = false;
-    flashcardForm.classList.remove('flashcard-form-active');
+    flashcardParent.classList.remove('flashcard-parent-active');
     // FLAPPING THE CARD
     const flashcardItself = document.querySelectorAll('.flashcard-itself');
     function flipTheCard() {
