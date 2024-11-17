@@ -39,6 +39,7 @@ body {
 .flashcard-themselves-header {
     color: white;
     font-size: 7rem;
+    font-weight: 600;
 }
 
 /* FLASHCARD ITSELF */
