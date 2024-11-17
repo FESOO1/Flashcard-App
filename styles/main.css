@@ -87,3 +87,14 @@ body {
     opacity: 0;
     pointer-events: none;
 }
+
+/* FLASHCARD SHADOW */
+
+.flashcard-shadow {
+    width: 350px;
+    height: 20px;
+    background-color: rgb(150, 150, 150);
+    border-radius: 50%;
+    filter: blur(20px);
+    transform: perspective(1000px) rotateX(80deg);
+}
