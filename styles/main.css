@@ -62,9 +62,10 @@ body {
 /* FLASHCARD ITSELF INNER */
 
 .flashcard-itself-inner {
+    --bg-color: rgb(20,20,20);
     width: calc(100% - 16px);
     height: calc(100% - 16px);
-    background-color: rgb(25, 25, 25);
+    background-color: var(--bg-color);
     position: absolute;
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.1);
@@ -90,7 +91,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgb(25, 25, 25);
+    background-color: var(--bg-color);
     z-index: 1;
     transition-delay: 200ms;
 }
@@ -104,7 +105,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgb(25, 25, 25);
+    background-color: var(--bg-color);
     opacity: 0;
     transition: opacity 250ms;
     transition-delay: 250ms;
