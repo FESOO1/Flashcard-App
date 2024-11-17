@@ -55,6 +55,8 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
+.flashcard-itself-inner
+
 /* FLASHCARD CONTROLS */
 
 .flashcard-controls {
@@ -93,7 +95,7 @@ body {
 .flashcard-shadow {
     width: 350px;
     height: 20px;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(120, 120, 120);
     border-radius: 50%;
     filter: blur(20px);
     transform: perspective(1000px) rotateX(80deg);
