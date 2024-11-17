@@ -1,6 +1,10 @@
 const flashcardItself = document.querySelector('.flashcard-itself');
 const flashcardShadow = document.querySelector('.flashcard-shadow');
+const flashcardForm = document.querySelector('.flashcard-form');
+const addNewCardBtn = document.getElementById('addNewCardBtn');
 let cardFlipped = false;
+let isFormOpened = false;
+
 // FLIP THE CARD
 
 function flipTheCard() {
@@ -17,6 +21,12 @@ function flipTheCard() {
     };
 };
 
-// INITIALIZING BUTTONS
+// ADD A CARD
 
+function addNewCard() {
+    isFormOpened = true;
+    flashcardForm.classList.add('flashcard-form-active');
+};
+
+// INITIALIZING BUTTONS
 window.addEventListener('click', flipTheCard);
