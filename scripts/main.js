@@ -1,5 +1,6 @@
 const flashcardItself = document.querySelector('.flashcard-itself');
 const flashcardShadow = document.querySelector('.flashcard-shadow');
+const flashcardEmptyText = document.querySelector('.flashcard-app-header');
 const flashcardForm = document.querySelector('.flashcard-form');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
 let cardFlipped = false;
@@ -26,7 +27,11 @@ function flipTheCard() {
 function addNewCard() {
     isFormOpened = true;
     flashcardForm.classList.add('flashcard-form-active');
+    flashcardEmptyText.classList.add('flashcard-app-header-deactive');
 };
 
 // INITIALIZING BUTTONS
+
 window.addEventListener('click', flipTheCard);
+
+addNewCardBtn.addEventListener('click', addNewCard);

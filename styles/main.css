@@ -36,6 +36,10 @@ body {
     font-weight: 600;
 }
 
+.flashcard-app-header-deactive {
+    display: none;
+}
+
 /* FLASHCARD THEMSELVES */
 
 .flashcard-themselves {
