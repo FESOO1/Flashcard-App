@@ -12,9 +12,6 @@
 }
 
 body {
-    background-color: rgb(15,15,15);
-    /* background: url(../assets/bg-down.svg) no-repeat; */
-    background-size: cover;
-    background-position: center;
-    background: radial-gradient(circle at 50% 50%,rgb(10,10,10),rgb(15,15,15));
+    /* background: radial-gradient(circle at 50% 50%,rgb(10,10,10),rgb(15,15,15)); */
+    background-color: rgb(16,16,16);
 }
