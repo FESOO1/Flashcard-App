@@ -44,7 +44,14 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.05);
     padding: 8px;
     position: relative;
+    transition: transform 500ms;
 }
+
+.flashcard-itself-flipped {
+    transform: perspective(500px) rotateY(180deg);
+}
+
+/* FLASHCARD ITSELF INNER */
 
 .flashcard-itself-inner {
     width: calc(100% - 16px);
@@ -53,9 +60,43 @@ body {
     position: absolute;
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
 }
 
-.flashcard-itself-inner
+/* .flashcard-itself-inner::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(33, 33, 33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+} */
+
+/* FLASHCARD ITSELF INNER QUESTION */
+
+.flashcard-itself-inner-question {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(25, 25, 25);
+    z-index: 1;
+}
+
+/* FLASHCARD ITSELF INNER ANSWER */
+
+.flashcard-itself-inner-answer {
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(25, 25, 25);
+}
 
 /* FLASHCARD CONTROLS */
 
