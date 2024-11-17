@@ -59,11 +59,13 @@
             <button class="flashcard-control-button-itself">NEXT</button> -->
         </div>
         <!-- FLASHCARD FORM -->
-        <form class="flashcard-form">
-            <label for="questionInput">Question <textarea name="questionInput" id="questionInput" placeholder="Write the question here..." class="flashcard-form-question-input"></textarea></label>
-            <label for="answerInput">Answer <textarea name="answerInput" id="answerInput" placeholder="Write the answer here..." class="flashcard-form-answer-input"></textarea></label>
-            <button type="submit" class="flashcard-button" id="addFlashCardBtn">ADD A FLASHCARD</button>
-        </form>
+        <div class="flashcard-parent">
+            <form class="flashcard-form">
+                <label for="questionInput">Question <textarea name="questionInput" id="questionInput" placeholder="Write the question here..." class="flashcard-form-question-input"></textarea></label>
+                <label for="answerInput">Answer <textarea name="answerInput" id="answerInput" placeholder="Write the answer here..." class="flashcard-form-answer-input"></textarea></label>
+                <button type="submit" class="flashcard-button" id="addFlashCardBtn">ADD A FLASHCARD</button>
+            </form>
+        </div>
         <!-- FLASHCARD SHADOW -->
         <div class="flashcard-shadow"></div>
     </div>

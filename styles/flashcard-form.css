@@ -1,3 +1,21 @@
+/* FLASHCARD PARENT */
+
+.flashcard-parent {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 555;
+    background-color: rgb(20, 20, 20);
+}
+
+.flashcard-parent-active {
+    display: flex;
+}
 /* FLASHCARD FORM */
 
 .flashcard-form {
@@ -7,13 +25,9 @@
     border-radius: 1rem;
     border-top: 1px solid rgba(255,255,255,0.05);
     border-bottom: 1px solid rgba(255,255,255,0.02);
-    display: none;
+    display: flex;
     flex-direction: column;
     row-gap: 15px;
-}
-
-.flashcard-form-active {
-    display: flex;
 }
 
 /* FLASHCARD FORM INPUT */
