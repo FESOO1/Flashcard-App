@@ -28,18 +28,20 @@ body {
     row-gap: 20px;
 }
 
+/* FLASHCARD APP HEADER */
+
+.flashcard-app-header {
+    color: white;
+    font-size: 7rem;
+    font-weight: 600;
+}
+
 /* FLASHCARD THEMSELVES */
 
 .flashcard-themselves {
     width: 350px;
     display: flex;
     justify-content: center;
-}
-
-.flashcard-themselves-header {
-    color: white;
-    font-size: 7rem;
-    font-weight: 600;
 }
 
 /* FLASHCARD ITSELF */
