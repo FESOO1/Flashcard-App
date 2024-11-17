@@ -32,7 +32,16 @@ body {
 
 .flashcard-themselves {
     width: 350px;
+    display: flex;
+    justify-content: center;
 }
+
+.flashcard-themselves-header {
+    color: white;
+    font-size: 7rem;
+}
+
+/* FLASHCARD ITSELF */
 
 .flashcard-itself {
     width: 100%;
