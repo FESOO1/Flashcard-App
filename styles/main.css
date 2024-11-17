@@ -36,7 +36,7 @@ body {
 
 .flashcard-itself {
     width: 100%;
-    /* min-height: 250px; */
+    min-height: 250px;
     background-color: rgb(40, 40, 40);
     border-radius: 1rem;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -62,11 +62,10 @@ body {
 
 .flashcard-itself-inner {
     --bg-color: rgb(20,20,20);
-    /* width: calc(100% - 16px); */
-    /* height: calc(100% - 16px); */
-    min-height: 250px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
     background-color: var(--bg-color);
-    /* position: absolute; */
+    position: absolute;
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.15);
     overflow: hidden;
@@ -77,9 +76,9 @@ body {
 .flashcard-itself-inner-question {
     width: 100%;
     height: 100%;
-    /* position: absolute;
+    position: absolute;
     top: 0;
-    left: 0; */
+    left: 0;
     background-color: var(--bg-color);
     z-index: 1;
     color: white;
@@ -104,12 +103,12 @@ body {
 
 .flashcard-itself-inner-answer {
     transform: rotateY(180deg);
-    width: calc(100% - 16px);
-    height: calc(100% - 16px);
+    width: 100%;
+    height: 100%;
     position: absolute;
     border-radius: 0.5rem;
-    top: 8px;
-    left: 8px;
+    top: 0;
+    left: 0;
     background-color: var(--bg-color);
     opacity: 0;
     padding: 20px;
