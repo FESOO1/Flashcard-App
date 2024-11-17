@@ -51,6 +51,14 @@ body {
     transform: perspective(500px) rotateY(180deg);
 }
 
+.flashcard-itself-flipped > .flashcard-itself-inner > .flashcard-itself-inner-question {
+    opacity: 0;
+}
+
+.flashcard-itself-flipped > .flashcard-itself-inner > .flashcard-itself-inner-answer {
+    opacity: 1;
+}
+
 /* FLASHCARD ITSELF INNER */
 
 .flashcard-itself-inner {
@@ -84,6 +92,7 @@ body {
     left: 0;
     background-color: rgb(25, 25, 25);
     z-index: 1;
+    transition-delay: 200ms;
 }
 
 /* FLASHCARD ITSELF INNER ANSWER */
@@ -96,6 +105,9 @@ body {
     top: 0;
     left: 0;
     background-color: rgb(25, 25, 25);
+    opacity: 0;
+    transition: opacity 250ms;
+    transition-delay: 250ms;
 }
 
 /* FLASHCARD CONTROLS */
