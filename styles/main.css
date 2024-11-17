@@ -52,7 +52,7 @@ body {
     background-color: rgb(35, 35, 35);
     position: absolute;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.04);
 }
 
 /* FLASHCARD CONTROLS */
