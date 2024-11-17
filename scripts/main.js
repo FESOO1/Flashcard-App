@@ -14,7 +14,9 @@ let isFormOpened = false;
 
 // ADD A CARD FORM
 
-function addNewCardForm() {
+function addNewCardForm(e) {
+    e.stopImmediatePropagation();
+
     isFormOpened = true;
     flashcardForm.classList.add('flashcard-form-active');
     flashcardEmptyText.classList.add('flashcard-app-header-deactive');
@@ -50,23 +52,24 @@ function addNewCard(e) {
     function flipTheCard() {
         for (let i = 0; i < flashcardItself.length; i++) {
             if (cardFlipped === false) {
-                flashcardItself.classList.add('flashcard-itself-flipped');
+                flashcardItself[i].classList.add('flashcard-itself-flipped');
                 flashcardShadow.classList.add('flashcard-shadow-flipped');
         
                 cardFlipped = true;
             } else {
-                flashcardItself.classList.remove('flashcard-itself-flipped');
+                flashcardItself[i].classList.remove('flashcard-itself-flipped');
                 flashcardShadow.classList.remove('flashcard-shadow-flipped');
         
                 cardFlipped = false;
             };
         };
     };
+
+    // INITIALIZING BUTTON
+    window.addEventListener('click', flipTheCard);
 };
 
 // INITIALIZING BUTTONS
-
-window.addEventListener('click', flipTheCard);
 
 addNewCardBtn.addEventListener('click', addNewCardForm);
 
