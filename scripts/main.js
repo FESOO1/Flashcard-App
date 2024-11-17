@@ -1,3 +1,4 @@
+const flashcardThemselves = document.querySelector('.flashcard-themselves');
 const flashcardItself = document.querySelector('.flashcard-itself');
 const flashcardShadow = document.querySelector('.flashcard-shadow');
 const flashcardEmptyText = document.querySelector('.flashcard-app-header');
@@ -36,7 +37,9 @@ function addNewCardForm() {
 // ADD A NEW CARD
 
 function addNewCard() {
-    
+    flashcardThemselves.innerHTML += `
+        
+    `;
 };
 
 // INITIALIZING BUTTONS
