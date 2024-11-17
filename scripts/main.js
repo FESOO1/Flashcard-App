@@ -2,6 +2,7 @@ const flashcardItself = document.querySelector('.flashcard-itself');
 const flashcardShadow = document.querySelector('.flashcard-shadow');
 const flashcardEmptyText = document.querySelector('.flashcard-app-header');
 const flashcardForm = document.querySelector('.flashcard-form');
+const flashcardFormSubmitBtn = document.querySelector('.flashcard-button');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
 let cardFlipped = false;
 let isFormOpened = false;
