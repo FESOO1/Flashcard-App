@@ -82,7 +82,22 @@ body {
     left: 0;
     background-color: var(--bg-color);
     z-index: 1;
-    transition-delay: 200ms;
+    color: white;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 100ms;
+    transition-delay: 100ms;
+}
+
+.flashcard-itself-inner-question-text {
+    font-weight: 600;
+    float: left;
+    padding-right: 5px;
+}
+
+.flash-card-itself-inner-question-itself {
+    font-weight: 300;
+    line-height: 22px;
 }
 
 /* FLASHCARD ITSELF INNER ANSWER */
@@ -98,6 +113,18 @@ body {
     opacity: 0;
     transition: opacity 250ms;
     transition-delay: 250ms;
+    color: red;
+}
+
+.flashcard-itself-inner-answer-text {
+    font-weight: 600;
+    float: left;
+    padding-right: 5px;
+}
+
+.flash-card-itself-inner-answer-itself {
+    font-weight: 300;
+    line-height: 22px;
 }
 
 /* FLASHCARD CONTROLS */
