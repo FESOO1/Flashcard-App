@@ -12,7 +12,6 @@
 }
 
 body {
-    background-color: rgb(16,16,16);
     background: radial-gradient(circle at 50% 50%, rgb(18,18,18), rgb(16,16,16));
 }
 
@@ -37,7 +36,7 @@ body {
 
 .flashcard-itself {
     width: 100%;
-    min-height: 350px;
+    /* min-height: 250px; */
     background-color: rgb(40, 40, 40);
     border-radius: 1rem;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -63,10 +62,11 @@ body {
 
 .flashcard-itself-inner {
     --bg-color: rgb(20,20,20);
-    width: calc(100% - 16px);
-    height: calc(100% - 16px);
+    /* width: calc(100% - 16px); */
+    /* height: calc(100% - 16px); */
+    min-height: 250px;
     background-color: var(--bg-color);
-    position: absolute;
+    /* position: absolute; */
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.15);
     overflow: hidden;
@@ -77,9 +77,9 @@ body {
 .flashcard-itself-inner-question {
     width: 100%;
     height: 100%;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     background-color: var(--bg-color);
     z-index: 1;
     color: white;
@@ -104,16 +104,18 @@ body {
 
 .flashcard-itself-inner-answer {
     transform: rotateY(180deg);
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
     position: absolute;
-    top: 0;
-    left: 0;
+    border-radius: 0.5rem;
+    top: 8px;
+    left: 8px;
     background-color: var(--bg-color);
     opacity: 0;
-    transition: opacity 250ms;
-    transition-delay: 250ms;
-    color: red;
+    padding: 20px;
+    color: white;
+    transition-delay: 100ms;
+    transition: opacity 150ms;
 }
 
 .flashcard-itself-inner-answer-text {

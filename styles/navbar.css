@@ -13,6 +13,7 @@ nav {
     background-color: rgba(30,30,31,0.5);
     backdrop-filter: blur(25px);
     column-gap: 4px;
+    z-index: 999;
 }
 
 /* NAVBAR BUTTON */
