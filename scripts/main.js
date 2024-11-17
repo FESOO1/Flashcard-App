@@ -12,20 +12,6 @@ let isFormOpened = false;
 
 // FLIP THE CARD
 
-function flipTheCard() {
-    if (cardFlipped === false) {
-        flashcardItself.classList.add('flashcard-itself-flipped');
-        flashcardShadow.classList.add('flashcard-shadow-flipped');
-
-        cardFlipped = true;
-    } else {
-        flashcardItself.classList.remove('flashcard-itself-flipped');
-        flashcardShadow.classList.remove('flashcard-shadow-flipped');
-
-        cardFlipped = false;
-    };
-};
-
 // ADD A CARD FORM
 
 function addNewCardForm() {
@@ -59,6 +45,23 @@ function addNewCard(e) {
     answerInput.value = '';
     isFormOpened = false;
     flashcardForm.classList.remove('flashcard-form-active');
+    // FLAPPING THE CARD
+    const flashcardItself = document.querySelectorAll('.flashcard-itself');
+    function flipTheCard() {
+        for (let i = 0; i < flashcardItself.length; i++) {
+            if (cardFlipped === false) {
+                flashcardItself.classList.add('flashcard-itself-flipped');
+                flashcardShadow.classList.add('flashcard-shadow-flipped');
+        
+                cardFlipped = true;
+            } else {
+                flashcardItself.classList.remove('flashcard-itself-flipped');
+                flashcardShadow.classList.remove('flashcard-shadow-flipped');
+        
+                cardFlipped = false;
+            };
+        };
+    };
 };
 
 // INITIALIZING BUTTONS
