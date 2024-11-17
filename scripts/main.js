@@ -41,6 +41,7 @@ function addNewCard(e) {
             </div>
         </div>
     `;
+    flashcardThemselves.firstElementChild.classList.add('flashcard-itself-active');
 
     // RESETING
     questionInput.value = '';

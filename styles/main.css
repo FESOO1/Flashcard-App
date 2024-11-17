@@ -60,6 +60,11 @@ body {
     padding: 8px;
     position: relative;
     transition: transform 500ms;
+    display: none;
+}
+
+.flashcard-itself-active {
+    display: unset;
 }
 
 .flashcard-itself-flipped {
