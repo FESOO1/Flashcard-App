@@ -67,7 +67,7 @@ function addNewCard(e) {
     };
 
     // INITIALIZING BUTTON
-    window.addEventListener('click', flipTheCard);
+    flashcardThemselves.addEventListener('click', flipTheCard);
 };
 
 // INITIALIZING BUTTONS
