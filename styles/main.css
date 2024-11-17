@@ -37,7 +37,7 @@ body {
 
 .flashcard-itself {
     width: 100%;
-    height: 350px;
+    min-height: 350px;
     background-color: rgb(40, 40, 40);
     border-radius: 1rem;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -47,12 +47,12 @@ body {
 }
 
 .flashcard-itself-inner {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(35, 35, 35);
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background-color: rgb(25, 25, 25);
     position: absolute;
     border-radius: 0.5rem;
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* FLASHCARD CONTROLS */
