@@ -26,7 +26,7 @@ nav {
     border-radius: 0.2rem;
     border: 0;
     background-color: rgb(35,35,35);
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid rgba(255,255,255,0.05);
     border-bottom: 1px solid rgba(255,255,255,0.02);
     cursor: pointer;
     transition: background-color 200ms;
