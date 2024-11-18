@@ -82,6 +82,25 @@ body {
     background-color: rgb(20,20,20);
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.12);
+    padding: 20px;
+}
+
+.flashcard-app-information-inner-itself-paragraph {
+    color: white;
+    font-weight: 300;
+    counter-reset: countTheParagraph;
+    counter-increment: countTheParagraph;
+}
+
+.flashcard-app-information-inner-itself-paragraph::before {
+    content: counter(countTheParagraph);
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+.flashcard-app-information-inner-itself-paragraph-inner {
+    
 }
 
 /* FLASHCARD APP */
