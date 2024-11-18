@@ -89,6 +89,7 @@ flashcardThemselves.addEventListener('click', flipCard);
 // PREVIOUS AND NEXT BUTTON FUNCTIONS
 
 function nextCardFunction() {
+    flashcardThemselves.querySelectorAll('div').classList.remove('flashcard-itself-flipped');
     flashcardThemselves.append(document.querySelector('.flashcard-itself:first-child'));
     prevCardBtn.disabled = false;
     cardCounterIn++;
