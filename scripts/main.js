@@ -38,54 +38,71 @@ function addNewCardForm(e) {
 
 function addNewCard(e) {
     e.preventDefault();
+    const errorMessage = [];
 
-    flashcardThemselves.innerHTML += `
-        <div class="flashcard-itself">
-            <div class="flashcard-itself-inner">
-                <div class="flashcard-itself-inner-question">
-                    <h4 class="flashcard-itself-inner-question-text">Question:</h4>
-                    <p class="flash-card-itself-inner-question-itself">${questionInput.value}</p>
-                </div>
-                <div class="flashcard-itself-inner-answer">
-                    <h4 class="flashcard-itself-inner-answer-text">Answer:</h4>
-                    <p class="flash-card-itself-inner-answer-itself">${answerInput.value}</p>
+    if (questionInput.value.length === 0) {
+        errorMessage.push('Error');
+        questionInput.classList.add('flashcard-form-question-input-error');
+    } else {
+        questionInput.classList.remove('flashcard-form-question-input-error');
+    };
+
+    if (answerInput.value.length === 0) {
+        errorMessage.push('Error');
+        answerInput.classList.add('flashcard-form-answer-input-error');
+    } else {
+        answerInput.classList.remove('flashcard-form-answer-input-error');
+    };
+
+    if (errorMessage.length === 0) {
+        flashcardThemselves.innerHTML += `
+            <div class="flashcard-itself">
+                <div class="flashcard-itself-inner">
+                    <div class="flashcard-itself-inner-question">
+                        <h4 class="flashcard-itself-inner-question-text">Question:</h4>
+                        <p class="flash-card-itself-inner-question-itself">${questionInput.value}</p>
+                    </div>
+                    <div class="flashcard-itself-inner-answer">
+                        <h4 class="flashcard-itself-inner-answer-text">Answer:</h4>
+                        <p class="flash-card-itself-inner-answer-itself">${answerInput.value}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
+        `;
     
-    // SAVING THE DATA ENTERED BY A USER IN THE LOCAL STORAGE
-    savedQuestions.push(questionInput.value);
-    localStorage.setItem('savedQuestionsLC', JSON.stringify(savedQuestions));
+        // SAVING THE DATA ENTERED BY A USER IN THE LOCAL STORAGE
+        savedQuestions.push(questionInput.value);
+        localStorage.setItem('savedQuestionsLC', JSON.stringify(savedQuestions));
 
-    savedAnswers.push(answerInput.value);
-    localStorage.setItem('savedAnswersLC', JSON.stringify(savedAnswers));
-    
-    // NEXT AND PREVIOUS BUTTONS
-    cardCounter++;
+        savedAnswers.push(answerInput.value);
+        localStorage.setItem('savedAnswersLC', JSON.stringify(savedAnswers));
+        
+        // NEXT AND PREVIOUS BUTTONS
+        cardCounter++;
 
-    if (cardCounter === 2) {
-        nextCardBtn.disabled = false;
-    };
-    // RESETING
-    questionInput.value = '';
-    answerInput.value = '';
-    isFormOpened = false;
-    flashcardParent.classList.remove('flashcard-parent-active');
-    //
-    flashcardThemselves.classList.add('flashcard-themselves-active');
-    // FLASHCARD COUNTER
-    flashcardCounterText.textContent = cardCounter;
-    flashcardCounterContainer.classList.add('flashcard-counter-active');
-    // SHUFFLE FUNCTION
-    const flashcardItself = document.querySelectorAll('.flashcard-itself');
-    function shuffleFunction() {
-        for (const flashcardItselfs of flashcardItself) {
-            flashcardItselfs.style.order = Math.floor(Math.random() * cardCounter);
+        if (cardCounter === 2) {
+            nextCardBtn.disabled = false;
         };
-    };
+        // RESETING
+        questionInput.value = '';
+        answerInput.value = '';
+        isFormOpened = false;
+        flashcardParent.classList.remove('flashcard-parent-active');
+        //
+        flashcardThemselves.classList.add('flashcard-themselves-active');
+        // FLASHCARD COUNTER
+        flashcardCounterText.textContent = cardCounter;
+        flashcardCounterContainer.classList.add('flashcard-counter-active');
+        // SHUFFLE FUNCTION
+        const flashcardItself = document.querySelectorAll('.flashcard-itself');
+        function shuffleFunction() {
+            for (const flashcardItselfs of flashcardItself) {
+                flashcardItselfs.style.order = Math.floor(Math.random() * cardCounter);
+            };
+        };
 
-    shuffleBtn.addEventListener('click', shuffleFunction);
+        shuffleBtn.addEventListener('click', shuffleFunction);
+    }
 };
 
 // FLIP CARD
