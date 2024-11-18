@@ -97,8 +97,6 @@ function nextCardFunction() {
     if (cardCounterIn === cardCounter) {
         nextCardBtn.disabled = true;
     };
-
-    flashcardThemselves.querySelector('div').classList.remove('flashcard-itself-flipped');
 };
 
 function prevCardFunction() {
@@ -109,8 +107,6 @@ function prevCardFunction() {
     if (cardCounterIn === 1) {
         prevCardBtn.disabled = true;
     };
-    
-    flashcardThemselves.querySelector('div').classList.remove('flashcard-itself-flipped');
 };
 
 prevCardBtn.addEventListener('click', prevCardFunction);
