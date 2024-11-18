@@ -66,7 +66,7 @@ function addNewCard(e) {
     // FLAPPING THE CARD
     const flashcardItself = document.querySelectorAll('.flashcard-itself');
     function flipTheCard() {
-        /* for (let i = 0; i < flashcardItself.length; i++) {
+        for (let i = 0; i < flashcardItself.length; i++) {
             if (cardFlipped === false) {
                 flashcardItself[i].classList.add('flashcard-itself-flipped');
                 flashcardShadow.classList.add('flashcard-shadow-flipped');
@@ -78,8 +78,8 @@ function addNewCard(e) {
         
                 cardFlipped = false;
             };
-        }; */
-        for (const flashcardItselfs of flashcardItself) {
+        };
+        /* for (const flashcardItselfs of flashcardItself) {
             if (cardFlipped === false) {
                 flashcardItselfs.classList.add('flashcard-itself-flipped');
                 flashcardShadow.classList.add('flashcard-shadow-flipped');
@@ -91,7 +91,7 @@ function addNewCard(e) {
         
                 cardFlipped = false;
             };
-        };
+        }; */
     };
 
     // INITIALIZING BUTTON
