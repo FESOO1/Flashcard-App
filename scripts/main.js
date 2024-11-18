@@ -52,9 +52,6 @@ function addNewCard(e) {
     cardCounter++;
 
     // NEXT AND PREVIOUS BUTTONS
-    if (cardCounter >= 2) {
-        nextCardBtn.disabled = false;
-    };
     // RESETING
     questionInput.value = '';
     answerInput.value = '';
@@ -64,20 +61,14 @@ function addNewCard(e) {
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
     // FLAPPING THE CARD
-    /* const flashcardItself = document.querySelectorAll('.flashcard-itself'); */
-    
-
     // PREVIOUS AND NEXT BUTTON FUNCTIONS
-    function nextCardFunction() {
-        flashcardThemselves.append(document.querySelector('.flashcard-itself:first-of-type'));
-    };
-
     // INITIALIZING BUTTON
-    nextCardBtn.addEventListener('click', nextCardFunction);
+    nextCardBtn.addEventListener('click', () => {
+        console.log(flashcardThemselves.querySelector('.flashcard-itself'));
+    });
 };
 
 // INITIALIZING BUTTONS
 
 addNewCardBtn.addEventListener('click', addNewCardForm);
-
 flashcardFormSubmitBtn.addEventListener('click', addNewCard);
