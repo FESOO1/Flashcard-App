@@ -70,6 +70,15 @@ function addNewCard(e) {
     // FLASHCARD COUNTER
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
+    // SHUFFLE FUNCTION
+    const flashcardItself = document.querySelectorAll('.flashcard-itself');
+    function shuffleFunction() {
+        for (const flashcardItselfs of flashcardItself) {
+            flashcardItselfs.style.order = Math.floor(Math.random() * cardCounter);
+        };
+    };
+
+    shuffleBtn.addEventListener('click', shuffleFunction);
 };
 
 // FLIP CARD
@@ -77,12 +86,10 @@ function addNewCard(e) {
 function flipCard() {
     if (cardFlipped === false) {
         flashcardThemselves.firstElementChild.classList.add('flashcard-itself-flipped');
-        /* flashcardShadow.classList.add('flashcard-shadow-flipped'); */
 
         cardFlipped = true;
     } else {
         flashcardThemselves.firstElementChild.classList.remove('flashcard-itself-flipped');
-        /* flashcardShadow.classList.remove('flashcard-shadow-flipped'); */
 
         cardFlipped = false;
     };
@@ -104,6 +111,7 @@ function nextCardFunction() {
 };
 
 function prevCardFunction() {
+    flashcardThemselves.prepend(document.querySelector('.flashcard-itself:last-child'));
     nextCardBtn.disabled = false;
     cardCounterIn--;
     flashcardCounterInText.textContent = cardCounterIn;
@@ -115,14 +123,6 @@ function prevCardFunction() {
 
 prevCardBtn.addEventListener('click', prevCardFunction);
 nextCardBtn.addEventListener('click', nextCardFunction);
-
-// SHUFFLE FUNCTION
-
-/* function shuffleFunction() {
-    flashcardThemselves.querySelectorAll('div').style.order = Math.floor(Math.random() * cardCounter);
-};
-
-shuffleBtn.addEventListener('click', shuffleFunction); */
 
 // INFO FUNCTION
 

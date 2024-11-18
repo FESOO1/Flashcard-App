@@ -185,10 +185,6 @@ body {
     display: block;
 }
 
-/* .flashcard-itself-active {
-    display: none;
-} */
-
 .flashcard-itself-flipped {
     transform: perspective(500px) rotateY(180deg);
 }
