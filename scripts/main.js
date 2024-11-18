@@ -73,12 +73,12 @@ function addNewCard(e) {
 function flipCard() {
     if (cardFlipped === false) {
         flashcardThemselves.firstElementChild.classList.add('flashcard-itself-flipped');
-        flashcardShadow.classList.add('flashcard-shadow-flipped');
+        /* flashcardShadow.classList.add('flashcard-shadow-flipped'); */
 
         cardFlipped = true;
     } else {
         flashcardThemselves.firstElementChild.classList.remove('flashcard-itself-flipped');
-        flashcardShadow.classList.remove('flashcard-shadow-flipped');
+        /* flashcardShadow.classList.remove('flashcard-shadow-flipped'); */
 
         cardFlipped = false;
     };
