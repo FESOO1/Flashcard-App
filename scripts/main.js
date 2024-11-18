@@ -59,8 +59,10 @@ function addNewCard(e) {
     questionInput.value = '';
     answerInput.value = '';
     isFormOpened = false;
-    flashcardCounterContainer.classList.add('flashcard-counter-active');
     flashcardParent.classList.remove('flashcard-parent-active');
+    // FLASHCARD COUNTER
+    flashcardCounterText.textContent = cardCounter;
+    flashcardCounterContainer.classList.add('flashcard-counter-active');
     // FLAPPING THE CARD
     const flashcardItself = document.querySelectorAll('.flashcard-itself');
     function flipTheCard() {
