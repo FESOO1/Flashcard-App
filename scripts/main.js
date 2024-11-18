@@ -34,7 +34,7 @@ function addNewCardForm(e) {
 function addNewCard(e) {
     e.preventDefault();
 
-    /* flashcardThemselves.innerHTML += `
+    flashcardThemselves.innerHTML += `
         <div class="flashcard-itself">
             <div class="flashcard-itself-inner">
                 <div class="flashcard-itself-inner-question">
@@ -47,23 +47,8 @@ function addNewCard(e) {
                 </div>
             </div>
         </div>
-    `; */
-    const flashcardItself = document.createElement('div');
-    flashcardItself.classList.add('flashcard-itself');
-    flashcardItself.innerHTML = `
-        <div class="flashcard-itself-inner">
-            <div class="flashcard-itself-inner-question">
-                <h4 class="flashcard-itself-inner-question-text">Question:</h4>
-                <p class="flash-card-itself-inner-question-itself">${questionInput.value}</p>
-            </div>
-            <div class="flashcard-itself-inner-answer">
-                <h4 class="flashcard-itself-inner-answer-text">Answer:</h4>
-                <p class="flash-card-itself-inner-answer-itself">${answerInput.value}</p>
-            </div>
-        </div>
     `;
-
-    flashcardThemselves.appendChild(flashcardItself);
+    
     flashcardThemselves.firstElementChild.classList.add('flashcard-itself-active');
 
     cardCounter++;
@@ -104,17 +89,19 @@ function addNewCard(e) {
         
     };
 
-    /* function nextCardFunction() {
+    function nextCardFunction() {
         flashcardItself[cardCounterIn].classList.remove('flashcard-itself-active');
         cardCounterIn++;
         flashcardItself[cardCounterIn].classList.add('flashcard-itself-active');
         prevCardBtn.disabled = false;
     };
- */
+
     // INITIALIZING BUTTON
     /* flashcardThemselves.addEventListener('click', flipTheCard); */
     nextCardBtn.addEventListener('click', nextCardFunction);
 };
+
+nextCardBtn.addEventListener('click', nextCardFunction);
 
 // INITIALIZING BUTTONS
 
