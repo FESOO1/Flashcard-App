@@ -49,8 +49,6 @@ function addNewCard(e) {
         </div>
     `;
     
-    flashcardThemselves.firstElementChild.classList.add('flashcard-itself-active');
-
     cardCounter++;
 
     // NEXT AND PREVIOUS BUTTONS
@@ -66,15 +64,12 @@ function addNewCard(e) {
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
     // FLAPPING THE CARD
-    const flashcardItself = document.querySelectorAll('.flashcard-itself');
+    /* const flashcardItself = document.querySelectorAll('.flashcard-itself'); */
     
 
     // PREVIOUS AND NEXT BUTTON FUNCTIONS
     function nextCardFunction() {
-        flashcardItself[cardCounterIn].classList.remove('flashcard-itself-active');
-        cardCounterIn++;
-        flashcardItself[cardCounterIn].classList.add('flashcard-itself-active');
-        prevCardBtn.disabled = false;
+        flashcardThemselves.append(document.querySelector('.flashcard-itself:first-of-type'));
     };
 
     // INITIALIZING BUTTON

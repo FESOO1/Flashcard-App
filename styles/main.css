@@ -62,14 +62,10 @@ body {
 
 .flashcard-themselves {
     width: 350px;
-    /* height: 250px; */
+    height: 250px;
     /* display: flex;
     justify-content: center; */
     overflow: hidden;
-}
-
-.flashcard-themselves-active {
-    height: 250px;
 }
 
 /* FLASHCARD ITSELF */
@@ -84,12 +80,12 @@ body {
     padding: 8px;
     position: relative;
     transition: transform 500ms;
-    display: none;
+    display: block;
 }
 
-.flashcard-itself-active {
+/* .flashcard-itself-active {
     display: unset;
-}
+} */
 
 .flashcard-itself-flipped {
     transform: perspective(500px) rotateY(180deg);
