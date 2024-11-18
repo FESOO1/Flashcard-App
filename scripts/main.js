@@ -6,6 +6,7 @@ const flashcardParent = document.querySelector('.flashcard-parent');
 const flashcardFormSubmitBtn = document.querySelector('.flashcard-button');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
 const shuffleBtn = document.getElementById('shuffleBtn');
+const infoBtn = document.getElementById('infoBtn');
 const questionInput = document.getElementById('questionInput');
 const answerInput = document.getElementById('answerInput');
 const prevCardBtn = document.getElementById('prevCardBtn');
