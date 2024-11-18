@@ -26,6 +26,11 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     z-index: 55;
+    display: none;
+}
+
+.flashcard-app-information-opened {
+    display: unset;
 }
 
 .flashcard-app-close-button {

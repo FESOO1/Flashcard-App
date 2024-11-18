@@ -7,6 +7,8 @@ const flashcardFormSubmitBtn = document.querySelector('.flashcard-button');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
 const shuffleBtn = document.getElementById('shuffleBtn');
 const infoBtn = document.getElementById('infoBtn');
+const infoContainer = document.querySelector('.flashcard-app-information');
+const closeInfoBtn = document.querySelector('.flashcard-app-close-button');
 const questionInput = document.getElementById('questionInput');
 const answerInput = document.getElementById('answerInput');
 const prevCardBtn = document.getElementById('prevCardBtn');
@@ -121,6 +123,16 @@ nextCardBtn.addEventListener('click', nextCardFunction);
 };
 
 shuffleBtn.addEventListener('click', shuffleFunction); */
+
+// INFO FUNCTION
+
+infoBtn.addEventListener('click', () => {
+    infoContainer.classList.add('flashcard-app-information-opened');
+});
+
+closeInfoBtn.addEventListener('click', () => {
+    infoContainer.classList.remove('flashcard-app-information-opened');
+});
 
 // INITIALIZING BUTTONS
 
