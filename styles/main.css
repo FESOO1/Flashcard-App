@@ -82,10 +82,10 @@ body {
     background-color: rgb(20,20,20);
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.12);
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 15px;
     counter-reset: count-the-paragraph;
 }
 
@@ -101,15 +101,15 @@ body {
     background-color: rgb(40, 40, 40);
     width: 35px;
     height: 35px;
-    border-radius: 0.1rem;
+    border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid rgba(255,255,255,0.05);
     border-bottom: 1px solid rgba(255,255,255,0.02);
     float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 /* FLASHCARD APP */
