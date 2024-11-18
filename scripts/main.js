@@ -115,11 +115,11 @@ nextCardBtn.addEventListener('click', nextCardFunction);
 
 // SHUFFLE FUNCTION
 
-function shuffleFunction() {
-    flashcardThemselves.querySelector('div').style.order = Math.floor(Math.random() * cardCounter);
+/* function shuffleFunction() {
+    flashcardThemselves.querySelectorAll('div').style.order = Math.floor(Math.random() * cardCounter);
 };
 
-shuffleBtn.addEventListener('click', shuffleFunction);
+shuffleBtn.addEventListener('click', shuffleFunction); */
 
 // INITIALIZING BUTTONS
 
