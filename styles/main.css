@@ -85,7 +85,7 @@ body {
 }
 
 /* .flashcard-itself-active {
-    display: unset;
+    display: none;
 } */
 
 .flashcard-itself-flipped {

@@ -68,6 +68,24 @@ function addNewCard(e) {
     flashcardCounterContainer.classList.add('flashcard-counter-active');
 };
 
+// FLIP CARD
+
+function flipCard() {
+    if (cardFlipped === false) {
+        flashcardThemselves.firstElementChild.classList.add('flashcard-itself-flipped');
+        flashcardShadow.classList.add('flashcard-shadow-flipped');
+
+        cardFlipped = true;
+    } else {
+        flashcardThemselves.firstElementChild.classList.remove('flashcard-itself-flipped');
+        flashcardShadow.classList.remove('flashcard-shadow-flipped');
+
+        cardFlipped = false;
+    };
+};
+
+flashcardThemselves.addEventListener('click', flipCard);
+
 // PREVIOUS AND NEXT BUTTON FUNCTIONS
 
 function nextCardFunction() {
