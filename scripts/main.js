@@ -89,19 +89,19 @@ flashcardThemselves.addEventListener('click', flipCard);
 // PREVIOUS AND NEXT BUTTON FUNCTIONS
 
 function nextCardFunction() {
-    flashcardThemselves.querySelectorAll('div').classList.remove('flashcard-itself-flipped');
     flashcardThemselves.append(document.querySelector('.flashcard-itself:first-child'));
     prevCardBtn.disabled = false;
     cardCounterIn++;
     flashcardCounterInText.textContent = cardCounterIn;
-
+    
     if (cardCounterIn === cardCounter) {
         nextCardBtn.disabled = true;
     };
+
+    flashcardThemselves.querySelector('div').classList.remove('flashcard-itself-flipped');
 };
 
 function prevCardFunction() {
-    flashcardThemselves.prepend(document.querySelector('.flashcard-itself:last-child'));
     nextCardBtn.disabled = false;
     cardCounterIn--;
     flashcardCounterInText.textContent = cardCounterIn;
@@ -109,6 +109,8 @@ function prevCardFunction() {
     if (cardCounterIn === 1) {
         prevCardBtn.disabled = true;
     };
+    
+    flashcardThemselves.querySelector('div').classList.remove('flashcard-itself-flipped');
 };
 
 prevCardBtn.addEventListener('click', prevCardFunction);
