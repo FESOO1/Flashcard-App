@@ -83,24 +83,33 @@ body {
     border-radius: 0.5rem;
     border: 1px solid rgba(255,255,255,0.12);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    counter-reset: count-the-paragraph;
 }
 
 .flashcard-app-information-inner-itself-paragraph {
+    counter-increment: count-the-paragraph;
     color: white;
     font-weight: 300;
-    counter-reset: countTheParagraph;
-    counter-increment: countTheParagraph;
+    line-height: 22px;
 }
 
 .flashcard-app-information-inner-itself-paragraph::before {
-    content: counter(countTheParagraph);
-    width: 20px;
-    height: 20px;
-    background-color: red;
-}
-
-.flashcard-app-information-inner-itself-paragraph-inner {
-    
+    content: counter(count-the-paragraph);
+    background-color: rgb(40, 40, 40);
+    width: 35px;
+    height: 35px;
+    border-radius: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 /* FLASHCARD APP */
