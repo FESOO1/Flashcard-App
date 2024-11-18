@@ -66,29 +66,10 @@ function addNewCard(e) {
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
     // FLAPPING THE CARD
-    /* const flashcardItself = document.querySelectorAll('.flashcard-itself');
-    function flipTheCard() {
-        for (let i = 0; i < flashcardItself.length; i++) {
-            if (cardFlipped === false) {
-                flashcardItself[i].classList.add('flashcard-itself-flipped');
-                flashcardShadow.classList.add('flashcard-shadow-flipped');
-        
-                cardFlipped = true;
-            } else {
-                flashcardItself[i].classList.remove('flashcard-itself-flipped');
-                flashcardShadow.classList.remove('flashcard-shadow-flipped');
-        
-                cardFlipped = false;
-            };
-        };
-    }; */
+    const flashcardItself = document.querySelectorAll('.flashcard-itself');
+    
 
     // PREVIOUS AND NEXT BUTTON FUNCTIONS
-
-    function nextCardFunction() {
-        
-    };
-
     function nextCardFunction() {
         flashcardItself[cardCounterIn].classList.remove('flashcard-itself-active');
         cardCounterIn++;
@@ -97,7 +78,6 @@ function addNewCard(e) {
     };
 
     // INITIALIZING BUTTON
-    /* flashcardThemselves.addEventListener('click', flipTheCard); */
     nextCardBtn.addEventListener('click', nextCardFunction);
 };
 

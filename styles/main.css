@@ -62,8 +62,14 @@ body {
 
 .flashcard-themselves {
     width: 350px;
-    display: flex;
-    justify-content: center;
+    /* height: 250px; */
+    /* display: flex;
+    justify-content: center; */
+    overflow: hidden;
+}
+
+.flashcard-themselves-active {
+    height: 250px;
 }
 
 /* FLASHCARD ITSELF */
