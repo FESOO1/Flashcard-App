@@ -101,8 +101,6 @@ function addNewCard(e) {
     nextCardBtn.addEventListener('click', nextCardFunction);
 };
 
-nextCardBtn.addEventListener('click', nextCardFunction);
-
 // INITIALIZING BUTTONS
 
 addNewCardBtn.addEventListener('click', addNewCardForm);
