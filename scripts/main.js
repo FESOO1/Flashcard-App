@@ -13,7 +13,7 @@ const flashcardCounterInText = document.getElementById('flashcardCounterInText')
 const flashcardCounterText = document.getElementById('flashcardCounterText');
 const flashcardCounterContainer = document.querySelector('.flashcard-counter');
 let cardCounter = 0;
-let cardCounterIn = 0;
+let cardCounterIn = 1;
 let cardFlipped = false;
 let isFormOpened = false;
 
@@ -71,10 +71,24 @@ function addNewCard(e) {
 function nextCardFunction() {
     flashcardThemselves.append(document.querySelector('.flashcard-itself:first-child'));
     prevCardBtn.disabled = false;
+    cardCounterIn++;
+    flashcardCounterInText.textContent = cardCounterIn;
+
+    if (cardCounterIn > cardCounter) {
+        cardCounterIn = 1;
+        flashcardCounterInText.textContent = cardCounterIn;
+    };
 };
 
 function prevCardFunction() {
     flashcardThemselves.prepend(document.querySelector('.flashcard-itself:last-child'));
+    cardCounterIn--;
+    flashcardCounterInText.textContent = cardCounterIn;
+
+    if (cardCounterIn === 0) {
+        cardCounterIn = cardCounter;
+        flashcardCounterInText.textContent = cardCounterIn;
+    };
 };
 
 prevCardBtn.addEventListener('click', prevCardFunction);
