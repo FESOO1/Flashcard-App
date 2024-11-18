@@ -28,6 +28,33 @@ body {
     z-index: 55;
 }
 
+.flashcard-app-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border: 0;
+    background-color: rgb(30,30,30);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.flashcard-app-close-button-svg {
+    color: white;
+
+}
+
+.flashcard-app-close-button:hover {
+    background-color: rgb(40, 40, 40);
+}
+
 /* FLASHCARD APP */
 
 .flashcard-app {
