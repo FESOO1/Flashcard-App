@@ -18,7 +18,6 @@ const flashcardCounterText = document.getElementById('flashcardCounterText');
 const flashcardCounterContainer = document.querySelector('.flashcard-counter');
 let cardCounter = 0;
 let cardCounterIn = 1;
-let cardFlipped = false;
 let isFormOpened = false;
 
 // FLIP THE CARD
@@ -84,15 +83,7 @@ function addNewCard(e) {
 // FLIP CARD
 
 function flipCard() {
-    if (cardFlipped === false) {
-        flashcardThemselves.firstElementChild.classList.add('flashcard-itself-flipped');
-
-        cardFlipped = true;
-    } else {
-        flashcardThemselves.firstElementChild.classList.remove('flashcard-itself-flipped');
-
-        cardFlipped = false;
-    };
+    flashcardThemselves.firstElementChild.classList.toggle('flashcard-itself-flipped');
 };
 
 flashcardThemselves.addEventListener('click', flipCard);
