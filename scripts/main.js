@@ -5,6 +5,7 @@ const flashcardEmptyText = document.querySelector('.flashcard-app-header');
 const flashcardParent = document.querySelector('.flashcard-parent');
 const flashcardFormSubmitBtn = document.querySelector('.flashcard-button');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
+const shuffleBtn = document.getElementById('shuffleBtn');
 const questionInput = document.getElementById('questionInput');
 const answerInput = document.getElementById('answerInput');
 const prevCardBtn = document.getElementById('prevCardBtn');
@@ -111,6 +112,14 @@ function prevCardFunction() {
 
 prevCardBtn.addEventListener('click', prevCardFunction);
 nextCardBtn.addEventListener('click', nextCardFunction);
+
+// SHUFFLE FUNCTION
+
+function shuffleFunction() {
+    flashcardThemselves.querySelector('div').style.order = Math.floor(Math.random() * cardCounter);
+};
+
+shuffleBtn.addEventListener('click', shuffleFunction);
 
 // INITIALIZING BUTTONS
 
