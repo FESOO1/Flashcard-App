@@ -26,8 +26,7 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     z-index: 55;
-    /* display: none; */
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -85,7 +84,7 @@ body {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 10px;
     counter-reset: count-the-paragraph;
 }
 
@@ -110,6 +109,11 @@ body {
     float: left;
     margin-right: 15px;
     margin-bottom: 15px;
+}
+
+.flashcard-app-information-inner-itself-divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* FLASHCARD APP */
