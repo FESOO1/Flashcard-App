@@ -9,6 +9,7 @@ const questionInput = document.getElementById('questionInput');
 const answerInput = document.getElementById('answerInput');
 const prevCardBtn = document.getElementById('prevCardBtn');
 const nextCardBtn = document.getElementById('nextCardBtn');
+const flashcardCounterContainer = document.querySelector('.flashcard-counter');
 let cardCounter = 0;
 let cardFlipped = false;
 let isFormOpened = false;
@@ -56,6 +57,7 @@ function addNewCard(e) {
     questionInput.value = '';
     answerInput.value = '';
     isFormOpened = false;
+    flashcardCounterContainer.classList.add('flashcard-counter-active');
     flashcardParent.classList.remove('flashcard-parent-active');
     // FLAPPING THE CARD
     const flashcardItself = document.querySelectorAll('.flashcard-itself');
