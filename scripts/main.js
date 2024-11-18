@@ -16,6 +16,8 @@ const nextCardBtn = document.getElementById('nextCardBtn');
 const flashcardCounterInText = document.getElementById('flashcardCounterInText');
 const flashcardCounterText = document.getElementById('flashcardCounterText');
 const flashcardCounterContainer = document.querySelector('.flashcard-counter');
+const savedQuestions = [];
+const savedAnswers = [];
 let cardCounter = 0;
 let cardCounterIn = 1;
 let isFormOpened = false;
@@ -52,6 +54,12 @@ function addNewCard(e) {
         </div>
     `;
     
+    // SAVING THE DATA ENTERED BY A USER IN THE LOCAL STORAGE
+    savedQuestions.push(questionInput.value);
+    localStorage.setItem('savedQuestionsLC', JSON.stringify(savedQuestions));
+
+    savedAnswers.push(answerInput.value);
+    localStorage.setItem('savedAnswersLC', JSON.stringify(savedAnswers));
     
     // NEXT AND PREVIOUS BUTTONS
     cardCounter++;
@@ -129,3 +137,52 @@ closeInfoBtn.addEventListener('click', () => {
 
 addNewCardBtn.addEventListener('click', addNewCardForm);
 flashcardFormSubmitBtn.addEventListener('click', addNewCard);
+
+
+// RETRIEVING DATA FROM LOCAL STORAGE
+
+function getDataFromLocalStorageToDisplay() {
+    const savedQuestionsIntoLocalStorage = JSON.parse(localStorage.getItem('savedQuestionsLC'));
+    const savedAnswersIntoLocalStorage = JSON.parse(localStorage.getItem('savedAnswersLC'));
+
+    if (savedQuestionsIntoLocalStorage.length > 0) {
+        for (let i = 0; i < savedQuestionsIntoLocalStorage.length; i++) {
+            flashcardThemselves.innerHTML += `
+                <div class="flashcard-itself">
+                    <div class="flashcard-itself-inner">
+                        <div class="flashcard-itself-inner-question">
+                            <h4 class="flashcard-itself-inner-question-text">Question:</h4>
+                            <p class="flash-card-itself-inner-question-itself">${savedQuestionsIntoLocalStorage[i]}</p>
+                        </div>
+                        <div class="flashcard-itself-inner-answer">
+                            <h4 class="flashcard-itself-inner-answer-text">Answer:</h4>
+                            <p class="flash-card-itself-inner-answer-itself">${savedAnswersIntoLocalStorage[i]}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // 
+            flashcardThemselves.classList.add('flashcard-themselves-active');
+            flashcardEmptyText.classList.add('flashcard-app-header-deactive');
+
+
+            // SAVING THE DATA ENTERED BY A USER IN THE LOCAL STORAGE
+            savedQuestions.push(savedQuestionsIntoLocalStorage[i]);
+            localStorage.setItem('savedQuestionsLC', JSON.stringify(savedQuestions));
+
+            savedAnswers.push(savedAnswersIntoLocalStorage[i]);
+            localStorage.setItem('savedAnswersLC', JSON.stringify(savedAnswers));
+
+            // NEXT AND PREVIOUS BUTTONS
+            cardCounter++;
+
+            if (cardCounter === 2) {
+                nextCardBtn.disabled = false;
+            };
+        };
+    };
+};
+
+
+getDataFromLocalStorageToDisplay();
