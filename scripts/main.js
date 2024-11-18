@@ -61,6 +61,8 @@ function addNewCard(e) {
     answerInput.value = '';
     isFormOpened = false;
     flashcardParent.classList.remove('flashcard-parent-active');
+    //
+    flashcardThemselves.classList.add('flashcard-themselves-active');
     // FLASHCARD COUNTER
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
@@ -74,20 +76,19 @@ function nextCardFunction() {
     cardCounterIn++;
     flashcardCounterInText.textContent = cardCounterIn;
 
-    if (cardCounterIn > cardCounter) {
-        cardCounterIn = 1;
-        flashcardCounterInText.textContent = cardCounterIn;
+    if (cardCounterIn === cardCounter) {
+        nextCardBtn.disabled = true;
     };
 };
 
 function prevCardFunction() {
     flashcardThemselves.prepend(document.querySelector('.flashcard-itself:last-child'));
+    nextCardBtn.disabled = false;
     cardCounterIn--;
     flashcardCounterInText.textContent = cardCounterIn;
 
-    if (cardCounterIn === 0) {
-        cardCounterIn = cardCounter;
-        flashcardCounterInText.textContent = cardCounterIn;
+    if (cardCounterIn === 1) {
+        prevCardBtn.disabled = true;
     };
 };
 
