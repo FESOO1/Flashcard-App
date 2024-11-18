@@ -49,9 +49,13 @@ function addNewCard(e) {
         </div>
     `;
     
+    
+    // NEXT AND PREVIOUS BUTTONS
     cardCounter++;
 
-    // NEXT AND PREVIOUS BUTTONS
+    if (cardCounter === 2) {
+        nextCardBtn.disabled = false;
+    };
     // RESETING
     questionInput.value = '';
     answerInput.value = '';
@@ -60,13 +64,21 @@ function addNewCard(e) {
     // FLASHCARD COUNTER
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
-    // FLAPPING THE CARD
-    // PREVIOUS AND NEXT BUTTON FUNCTIONS
-    // INITIALIZING BUTTON
-    nextCardBtn.addEventListener('click', () => {
-        console.log(flashcardThemselves.querySelector('.flashcard-itself'));
-    });
 };
+
+// PREVIOUS AND NEXT BUTTON FUNCTIONS
+
+function nextCardFunction() {
+    flashcardThemselves.append(document.querySelector('.flashcard-itself:first-child'));
+    prevCardBtn.disabled = false;
+};
+
+function prevCardFunction() {
+    flashcardThemselves.prepend(document.querySelector('.flashcard-itself:last-child'));
+};
+
+prevCardBtn.addEventListener('click', prevCardFunction);
+nextCardBtn.addEventListener('click', nextCardFunction);
 
 // INITIALIZING BUTTONS
 
