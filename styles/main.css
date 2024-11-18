@@ -25,6 +25,7 @@ body {
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 55;
     display: none;
     justify-content: center;
