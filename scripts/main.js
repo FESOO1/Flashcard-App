@@ -7,6 +7,9 @@ const flashcardFormSubmitBtn = document.querySelector('.flashcard-button');
 const addNewCardBtn = document.getElementById('addNewCardBtn');
 const questionInput = document.getElementById('questionInput');
 const answerInput = document.getElementById('answerInput');
+const prevCardBtn = document.getElementById('prevCardBtn');
+const nextCardBtn = document.getElementById('nextCardBtn');
+let cardCounter = 0;
 let cardFlipped = false;
 let isFormOpened = false;
 
@@ -43,6 +46,12 @@ function addNewCard(e) {
     `;
     flashcardThemselves.firstElementChild.classList.add('flashcard-itself-active');
 
+    cardCounter++;
+
+    // NEXT AND PREVIOUS BUTTONS
+    if (cardCounter >= 2) {
+        nextCardBtn.disabled = false;
+    };
     // RESETING
     questionInput.value = '';
     answerInput.value = '';
@@ -51,7 +60,7 @@ function addNewCard(e) {
     // FLAPPING THE CARD
     const flashcardItself = document.querySelectorAll('.flashcard-itself');
     function flipTheCard() {
-        for (let i = 0; i < flashcardItself.length; i++) {
+        /* for (let i = 0; i < flashcardItself.length; i++) {
             if (cardFlipped === false) {
                 flashcardItself[i].classList.add('flashcard-itself-flipped');
                 flashcardShadow.classList.add('flashcard-shadow-flipped');
@@ -59,6 +68,19 @@ function addNewCard(e) {
                 cardFlipped = true;
             } else {
                 flashcardItself[i].classList.remove('flashcard-itself-flipped');
+                flashcardShadow.classList.remove('flashcard-shadow-flipped');
+        
+                cardFlipped = false;
+            };
+        }; */
+        for (const flashcardItselfs of flashcardItself) {
+            if (cardFlipped === false) {
+                flashcardItselfs.classList.add('flashcard-itself-flipped');
+                flashcardShadow.classList.add('flashcard-shadow-flipped');
+        
+                cardFlipped = true;
+            } else {
+                flashcardItselfs.classList.remove('flashcard-itself-flipped');
                 flashcardShadow.classList.remove('flashcard-shadow-flipped');
         
                 cardFlipped = false;
