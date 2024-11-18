@@ -13,6 +13,7 @@ const flashcardCounterInText = document.getElementById('flashcardCounterInText')
 const flashcardCounterText = document.getElementById('flashcardCounterText');
 const flashcardCounterContainer = document.querySelector('.flashcard-counter');
 let cardCounter = 0;
+let cardCounterIn = 0;
 let cardFlipped = false;
 let isFormOpened = false;
 
@@ -33,7 +34,7 @@ function addNewCardForm(e) {
 function addNewCard(e) {
     e.preventDefault();
 
-    flashcardThemselves.innerHTML += `
+    /* flashcardThemselves.innerHTML += `
         <div class="flashcard-itself">
             <div class="flashcard-itself-inner">
                 <div class="flashcard-itself-inner-question">
@@ -46,7 +47,23 @@ function addNewCard(e) {
                 </div>
             </div>
         </div>
+    `; */
+    const flashcardItself = document.createElement('div');
+    flashcardItself.classList.add('flashcard-itself');
+    flashcardItself.innerHTML = `
+        <div class="flashcard-itself-inner">
+            <div class="flashcard-itself-inner-question">
+                <h4 class="flashcard-itself-inner-question-text">Question:</h4>
+                <p class="flash-card-itself-inner-question-itself">${questionInput.value}</p>
+            </div>
+            <div class="flashcard-itself-inner-answer">
+                <h4 class="flashcard-itself-inner-answer-text">Answer:</h4>
+                <p class="flash-card-itself-inner-answer-itself">${answerInput.value}</p>
+            </div>
+        </div>
     `;
+
+    flashcardThemselves.appendChild(flashcardItself);
     flashcardThemselves.firstElementChild.classList.add('flashcard-itself-active');
 
     cardCounter++;
@@ -64,7 +81,7 @@ function addNewCard(e) {
     flashcardCounterText.textContent = cardCounter;
     flashcardCounterContainer.classList.add('flashcard-counter-active');
     // FLAPPING THE CARD
-    const flashcardItself = document.querySelectorAll('.flashcard-itself');
+    /* const flashcardItself = document.querySelectorAll('.flashcard-itself');
     function flipTheCard() {
         for (let i = 0; i < flashcardItself.length; i++) {
             if (cardFlipped === false) {
@@ -79,23 +96,24 @@ function addNewCard(e) {
                 cardFlipped = false;
             };
         };
-        /* for (const flashcardItselfs of flashcardItself) {
-            if (cardFlipped === false) {
-                flashcardItselfs.classList.add('flashcard-itself-flipped');
-                flashcardShadow.classList.add('flashcard-shadow-flipped');
+    }; */
+
+    // PREVIOUS AND NEXT BUTTON FUNCTIONS
+
+    function nextCardFunction() {
         
-                cardFlipped = true;
-            } else {
-                flashcardItselfs.classList.remove('flashcard-itself-flipped');
-                flashcardShadow.classList.remove('flashcard-shadow-flipped');
-        
-                cardFlipped = false;
-            };
-        }; */
     };
 
+    /* function nextCardFunction() {
+        flashcardItself[cardCounterIn].classList.remove('flashcard-itself-active');
+        cardCounterIn++;
+        flashcardItself[cardCounterIn].classList.add('flashcard-itself-active');
+        prevCardBtn.disabled = false;
+    };
+ */
     // INITIALIZING BUTTON
-    flashcardThemselves.addEventListener('click', flipTheCard);
+    /* flashcardThemselves.addEventListener('click', flipTheCard); */
+    nextCardBtn.addEventListener('click', nextCardFunction);
 };
 
 // INITIALIZING BUTTONS
